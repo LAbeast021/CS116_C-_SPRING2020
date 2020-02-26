@@ -39,13 +39,28 @@ int main(){
 };
 
 /* 
-Customer Name :                Kiarash
+ Customer Name :               Kiarash
  Hours of labor :                 4.50
  Cost for labor:                157.50
  Parts and Supplies :            97.00
  Tax :                            8.73
  Total Amount Due :             263.23
 */
+/* 
+ Customer Name :                  Lee
+ Hours of labor :                3.00
+ Cost for labor:               105.00
+ Parts and Supplies :            0.00
+ Tax :                           0.00
+ Total Amount Due :            105.00
+*/
+
+
+
+
+
+
+
 
 // Psudo Code : 
 
