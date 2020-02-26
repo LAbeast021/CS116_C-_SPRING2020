@@ -1,6 +1,8 @@
-//  Hesampour Kiarash
-// Feb / 26 / 2020 , Lab #2
-//  Section : 25978 , Mon,Wed 8:55 - 10:55
+/*  
+  Hesampour Kiarash
+  Feb / 26 / 2020 , Lab #2
+  Section : 25978 , Mon,Wed 8:55 - 10:55
+*/
 
 #include <iostream>
 #include <string>
@@ -54,17 +56,6 @@ int main(){
  Tax :                           0.00
  Total Amount Due :            105.00
 */
-
-
-
-
-
-
-
-
-
-
-
 
 
 
