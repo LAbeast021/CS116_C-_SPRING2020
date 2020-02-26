@@ -4,9 +4,13 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 int main(){
+
+    cout << fixed << showpoint << setprecision(2);
+
     string name;
     double hoursOfLabor, taxAmount, costOfPartAndSupplies, costOfLabor,totalAmount;
     const  double tax_rate = 0.09;
@@ -24,16 +28,26 @@ int main(){
     taxAmount   = costOfPartAndSupplies * tax_rate;
     totalAmount = totalAmount + taxAmount;
 
-    cout << " Customer Name : " << name << endl;
-    cout << " Hours of labor : " << hoursOfLabor << endl;
-    cout << " Cost for labor: " << costOfLabor << endl;
-    cout << " Parts and Supplies : " << costOfPartAndSupplies << endl;
-    cout << " Tax : " << taxAmount << endl;
-    cout << " Total Amount Due : " << totalAmount << endl;
+    cout 
+     << " Customer Name : "  << setw(21) << name << endl
+     << " Hours of labor : " << setw(18) << hoursOfLabor << endl
+     << " Cost for labor: "  << setw(21) << costOfLabor << endl
+     << " Parts and Supplies : " << setw(15) << costOfPartAndSupplies << endl
+     << " Tax : " << setw(29) << taxAmount << endl
+     << " Total Amount Due : " << setw(18) << totalAmount << endl;
 
     return 0;
 
 };
+
+/* 
+Customer Name :                Kiarash
+ Hours of labor :               4.50
+ Cost for labor:                157.50
+ Parts and Supplies :           97.00
+ Tax :                          8.73
+ Total Amount Due :             263.23
+*/
 
 // Psudo Code : 
 
