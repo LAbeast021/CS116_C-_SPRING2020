@@ -58,33 +58,7 @@ int main(){
 */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//////////////////////////////////////////////////////////////////////////////////////////
 /*
     // ///// VARIABLES ///////////////
     step1: Declare  Name(string), hours_of_labor(double), cost part and supplies(double), and total amount due(double);
