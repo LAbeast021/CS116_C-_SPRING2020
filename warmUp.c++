@@ -25,26 +25,55 @@ using namespace std;
 //         cout << " whoooray Discount ;)  ";
 // };
 
-int main () {
-    int counter = 0;
-    int code;
-    cout << "sag";
-    cin >> code;
-    switch (code)
-    {
-    case  1:
-        counter+=1;
-        break;
+// int main () {
+//     int counter = 0;
+//     int code;
+//     cout << "sag";
+//     cin >> code;
+//     switch (code)
+//     {
+//     case  1:
+//         counter+=1;
+//         break;
     
-    case  2:
-    case  4:
-        counter+=2;
-        break;
-    case 3:
-        counter +=3;
-    default:
-     counter = 10;
-     break;        
+//     case  2:
+//     case  4:
+//         counter+=2;
+//         break;
+//     case 3:
+//         counter +=3;
+//     default:
+//      counter = 10;
+//      break;        
+//     }
+//     cout << counter;
+// }
+// int main(){
+//     char pkg;
+//     double hours;
+//     if (pkg == 'A' || pkg == 'a') {
+//         if(hours <= 10){
+//             cout << "Less Than 10  ";
+//         }
+//         else if ( hours <= 200){
+//             cout << " Between 10 and 200 ";
+//         }
+//         else {
+//             cout << " greater than 200";
+//         }
+//     }
+// };
+int main(){
+    int day =1;
+    double pay = .01 , total = 0.01;
+    do {
+        cout << day << "/t" << pay << "/t" << total << endl;
+        day++;
+        pay = 2 * pay;
+        total += pay;
     }
-    cout << counter;
-}
+    while (day <= 3);
+    cout << total << endl ;
+    return 0; 
+};
+// cin.clear(); cin.ignore(200,'\n')
