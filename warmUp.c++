@@ -64,16 +64,23 @@ using namespace std;
 //     }
 // };
 int main(){
-    int day =1;
-    double pay = .01 , total = 0.01;
-    do {
-        cout << day << "/t" << pay << "/t" << total << endl;
-        day++;
-        pay = 2 * pay;
-        total += pay;
-    }
-    while (day <= 3);
-    cout << total << endl ;
+    // int day =1;
+    // double pay = .01 , total = 0.01;
+    // do {
+    //     cout << day << "/t" << pay << "/t" << total << endl;
+    //     day++;
+    //     pay = 2 * pay;
+    //     total += pay;
+    // }
+    // while (day <= 3);
+    // cout << total << endl ;
+     int   A = 3,    B = 2,     C = 5,  D = 15;
+
+                         if  ((A > B ) &&  A * B  <  C  ||  A * C  >=  D)
+
+                              cout << "true";
+
+                     else   cout << "false";
     return 0; 
 };
 // cin.clear(); cin.ignore(200,'\n')
