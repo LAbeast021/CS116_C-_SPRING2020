@@ -1,55 +1,55 @@
  ______________________________________________________________
 
- Row 1 : 346 - 346 - 130 - 982 - 90 - 656 - 117 - 595
+ Row 1 : 346 - 130 - 982 - 90 - 656 - 117 - 595
 	 Highest Number : 982 . 
 	 Lowest  Number : 90 . 
 	 The Sum of the row is : 2916 . 
 	 The Average of the row is : 416 . 
  ______________________________________________________________
 
- Row 2 : 415 - 415 - 948 - 126 - 4 - 558 - 571 - 87
+ Row 2 : 415 - 948 - 126 - 4 - 558 - 571 - 87
 	 Highest Number : 948 . 
 	 Lowest  Number : 4 . 
 	 The Sum of the row is : 2709 . 
 	 The Average of the row is : 387 . 
  ______________________________________________________________
 
- Row 3 : 42 - 42 - 360 - 412 - 721 - 463 - 47 - 119
+ Row 3 : 42 - 360 - 412 - 721 - 463 - 47 - 119
 	 Highest Number : 721 . 
 	 Lowest  Number : 42 . 
 	 The Sum of the row is : 2164 . 
 	 The Average of the row is : 309 . 
  ______________________________________________________________
 
- Row 4 : 441 - 441 - 190 - 985 - 214 - 509 - 2 - 571
+ Row 4 : 441 - 190 - 985 - 214 - 509 - 2 - 571
 	 Highest Number : 985 . 
 	 Lowest  Number : 2 . 
 	 The Sum of the row is : 2912 . 
 	 The Average of the row is : 416 . 
  ______________________________________________________________
 
- Row 5 : 77 - 77 - 81 - 681 - 651 - 995 - 93 - 74
+ Row 5 : 77 - 81 - 681 - 651 - 995 - 93 - 74
 	 Highest Number : 995 . 
 	 Lowest  Number : 74 . 
 	 The Sum of the row is : 2652 . 
 	 The Average of the row is : 378 . 
  ______________________________________________________________
 
- Row 6 : 310 - 310 - 9 - 995 - 561 - 92 - 14 - 288
+ Row 6 : 310 - 9 - 995 - 561 - 92 - 14 - 288
 	 Highest Number : 995 . 
 	 Lowest  Number : 9 . 
 	 The Sum of the row is : 2269 . 
 	 The Average of the row is : 324 . 
  ______________________________________________________________
 
- Row 7 : 466 - 466 - 664 - 892 - 8 - 766 - 34 - 639
+ Row 7 : 466 - 664 - 892 - 8 - 766 - 34 - 639
 	 Highest Number : 892 . 
 	 Lowest  Number : 8 . 
 	 The Sum of the row is : 3469 . 
 	 The Average of the row is : 495 . 
  ______________________________________________________________
 
- Row 8 : 151 - 151 - 64 - 98 - 813 - 67 - 834 - 369
+ Row 8 : 151 - 64 - 98 - 813 - 67 - 834 - 369
 	 Highest Number : 834 . 
 	 Lowest  Number : 64 . 
 	 The Sum of the row is : 2396 . 

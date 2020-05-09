@@ -1,0 +1,6 @@
+ in party id : 8 Invalid data, Meal Type should be either ' S ' or ' D ' .!!! 
+ in party id : 9 Invalid data, weekwnd  should be either ' Y ' for yes or ' N ' for no .!!! 
+ in party id : 11 Number of people cannot be a negative number .!!! 
+ in party id : 12 Number of people cannot be a negative number .!!! 
+ in party id : 13 Deposit cannot be a negative number .!!! 
+ in party id : 13 Deposit cannot be a negative number .!!! 

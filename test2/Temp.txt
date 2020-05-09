@@ -1,0 +1,1 @@
+AAA  45   BBB  200  CCC -10   DDD 0
