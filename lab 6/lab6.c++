@@ -22,9 +22,7 @@ void outputHandler(int,int,int,char,char,double,double,double,double,double &);
 
 
 int main(){
-    char meal_type, weekend, meal_type_error, weekend_error;
-    int partyId, number_of_adults, number_of_kids, number_of_people_error;
-    double deposit_amount, deposit_error , total_meal_cost, tip_tax_amount, surcharge_amount, total_amount;
+    
 
     errorfile.open ("./errorFile.txt");
         if(!errorfile.is_open()){
@@ -44,9 +42,12 @@ int main(){
 
     outfile << "|--" << " Party Id " << "--|--" << " # of Adults" << "--|--" << " # of Kids" 
     << "--|--" << " Meal Type" << "--|--" << " Is a Weekend?" <<"--|--" << " Deposit Amount" 
-    << "--|--" << " Meal Cost" << "--|--" << " Tip/tax" <<"--|--" << " Total Bill Due" << "--|" <<endl;
+    << "--|--" << " Meal Cost" << "--|--" << " Tip/tax/surcharge" <<"--|--" << " Total Bill Due" << "--|" <<endl;
 
     while (!infile.fail() && !infile.eof()) {
+        char meal_type, weekend, meal_type_error, weekend_error;
+        int partyId, number_of_adults, number_of_kids, number_of_people_error;
+        double deposit_amount, deposit_error , total_meal_cost, tip_tax_amount, surcharge_amount, total_amount;
         dataInput( meal_type , weekend,partyId, number_of_adults, number_of_kids, deposit_amount, deposit_error, number_of_people_error, meal_type_error,weekend_error);
         if(deposit_error && number_of_people_error && meal_type_error && weekend_error){
            total_meal_cost = mealCostCalculator(meal_type, number_of_adults, number_of_kids);
@@ -91,12 +92,12 @@ double mealCostCalculator (char meal_type, int number_of_adults, int number_of_k
     double total_cost_of_meal_for_adults, total_cost_of_meal_for_kids, total_meal_cost;
     if (meal_type == 'D') {
         total_cost_of_meal_for_adults = number_of_adults * deluxe_per_adult;
-        total_cost_of_meal_for_kids = number_of_kids *(deluxe_per_adult * 0.60);
+        total_cost_of_meal_for_kids = (number_of_kids * deluxe_per_adult) * 0.60;
         total_meal_cost = total_cost_of_meal_for_adults + total_cost_of_meal_for_kids;
     }
     else if (meal_type == 'S'){
         total_cost_of_meal_for_adults = number_of_adults * standard_per_adult;
-        total_cost_of_meal_for_kids = number_of_kids * (standard_per_adult * 0.60);
+        total_cost_of_meal_for_kids = (number_of_kids * standard_per_adult )* 0.60;
         total_meal_cost = total_cost_of_meal_for_adults + total_cost_of_meal_for_kids;
     }
 
@@ -104,14 +105,14 @@ double mealCostCalculator (char meal_type, int number_of_adults, int number_of_k
 };
 
 void taxAndTipCalculator (double total_meal_cost, char weekend, double & tip_tax_amount, double & surcharge_amount){
-    const double tax = 0.18, Weekend_extra_tax = 0.7;
+    const double tax = 0.18, Weekend_extra_tax = 0.07;
     if (weekend == 'N'){
         tip_tax_amount =  total_meal_cost * tax;
         surcharge_amount = 0;
     }
     else{
         tip_tax_amount =  total_meal_cost * tax;
-        surcharge_amount = total_meal_cost * Weekend_extra_tax;
+        surcharge_amount = (total_meal_cost + tip_tax_amount ) * Weekend_extra_tax;
     }
 };
 void outputHandler (int partyId,int number_of_adults,int number_of_kids,char meal_type,char weekend,double deposit_amount,double total_meal_cost,double tip_tax_amount,double surcharge_amount,double & total_amount){
@@ -121,15 +122,16 @@ void outputHandler (int partyId,int number_of_adults,int number_of_kids,char mea
 };
 
 /*
-|-- Party Id --|-- # of Adults--|-- # of Kids--|-- Meal Type--|-- Is a Weekend?--|-- Deposit Amount--|-- Meal Cost--|-- Tip/tax--|-- Total Bill Due--|
-|--     1             10              0              S                Y                 $ 100             $ 217.5        $ 191.4        $ 508.9
-|--     2             27              3              D                Y                 $ 57.5             $ 743.04        $ 653.875        $ 1454.42
+|-- Party Id --|-- # of Adults--|-- # of Kids--|-- Meal Type--|-- Is a Weekend?--|-- Deposit Amount--|-- Meal Cost--|-- Tip/tax/surcharge--|-- Total Bill Due--|
+|--     1             10              0              S                Y                 $ 100             $ 217.5        $ 57.1155        $ 374.615
+|--     2             27              3              D                Y                 $ 57.5             $ 743.04        $ 195.122        $ 995.662
 |--     3            125             17              D                N                 $ 0             $ 3488.16        $ 627.869        $ 4116.03
 |--     4              4              0              S                N                 $ 25             $ 87        $ 15.66        $ 127.66
-|--     5              0             25              S                Y                 $ 23.75             $ 326.25        $ 287.1        $ 637.1
+|--     5              0             25              S                Y                 $ 23.75             $ 326.25        $ 85.6732        $ 435.673
 |--     6            250             43              D                N                 $ 500             $ 7115.64        $ 1280.82        $ 8896.46
 |--     7              0              0              D                N                 $ 0             $ 0        $ 0        $ 0
-|--    10              5              0              D                Y                 $ 275             $ 129        $ 113.52        $ 517.52
+|--    10              5              0              D                Y                 $ 275             $ 129        $ 33.8754        $ 437.875
+
 */
 /*
 in party id : 8 Invalid data, Meal Type should be either ' S ' or ' D ' .!!! 
