@@ -42,7 +42,7 @@ int main(){
 
     outfile << "|--" << " Party Id " << "--|--" << " # of Adults" << "--|--" << " # of Kids" 
     << "--|--" << " Meal Type" << "--|--" << " Is a Weekend?" <<"--|--" << " Deposit Amount" 
-    << "--|--" << " Meal Cost" << "--|--" << " Tip/tax/surcharge" <<"--|--" << " Total Bill Due" << "--|" <<endl;
+    << "--|--" << " Meal Cost" << "--|--" << " Tip/tax/surcharge" <<"--|--" << " Total Bill owing" << "--|" <<endl;
 
     while (!infile.fail() && !infile.eof()) {
         char meal_type, weekend, meal_type_error, weekend_error;
@@ -116,21 +116,21 @@ void taxAndTipCalculator (double total_meal_cost, char weekend, double & tip_tax
     }
 };
 void outputHandler (int partyId,int number_of_adults,int number_of_kids,char meal_type,char weekend,double deposit_amount,double total_meal_cost,double tip_tax_amount,double surcharge_amount,double & total_amount){
-    total_amount = total_meal_cost + tip_tax_amount + surcharge_amount + deposit_amount;
+    total_amount = total_meal_cost + tip_tax_amount + surcharge_amount - deposit_amount;
     outfile  << "|-- " << setw(5) << partyId << setw(15) << number_of_adults << setw(15)  << number_of_kids << setw(15) << meal_type << setw(17)  << weekend  << setw(19)
         << " $ "<< deposit_amount << setw(15) << " $ " << total_meal_cost << setw(10)   << " $ " << tip_tax_amount+surcharge_amount << setw(10)   << "$ "<< total_amount << endl;
 };
 
 /*
-|-- Party Id --|-- # of Adults--|-- # of Kids--|-- Meal Type--|-- Is a Weekend?--|-- Deposit Amount--|-- Meal Cost--|-- Tip/tax/surcharge--|-- Total Bill Due--|
-|--     1             10              0              S                Y                 $ 100             $ 217.5        $ 57.1155        $ 374.615
-|--     2             27              3              D                Y                 $ 57.5             $ 743.04        $ 195.122        $ 995.662
+|-- Party Id --|-- # of Adults--|-- # of Kids--|-- Meal Type--|-- Is a Weekend?--|-- Deposit Amount--|-- Meal Cost--|-- Tip/tax/surcharge--|-- Total Bill owing--|
+|--     1             10              0              S                Y                 $ 100             $ 217.5        $ 57.1155        $ 174.615
+|--     2             27              3              D                Y                 $ 57.5             $ 743.04        $ 195.122        $ 880.662
 |--     3            125             17              D                N                 $ 0             $ 3488.16        $ 627.869        $ 4116.03
-|--     4              4              0              S                N                 $ 25             $ 87        $ 15.66        $ 127.66
-|--     5              0             25              S                Y                 $ 23.75             $ 326.25        $ 85.6732        $ 435.673
-|--     6            250             43              D                N                 $ 500             $ 7115.64        $ 1280.82        $ 8896.46
+|--     4              4              0              S                N                 $ 25             $ 87        $ 15.66        $ 77.66
+|--     5              0             25              S                Y                 $ 23.75             $ 326.25        $ 85.6732        $ 388.173
+|--     6            250             43              D                N                 $ 500             $ 7115.64        $ 1280.82        $ 7896.46
 |--     7              0              0              D                N                 $ 0             $ 0        $ 0        $ 0
-|--    10              5              0              D                Y                 $ 275             $ 129        $ 33.8754        $ 437.875
+|--    10              5              0              D                Y                 $ 275             $ 129        $ 33.8754        $ -112.125
 
 */
 /*

@@ -1,6 +1,14 @@
+/*  
+  Hesampour Kiarash
+  May / 19 / 2020 , Lab # 6
+  Section : 25978 , Mon,Wed 8:55 - 10:55
+*/
+
 #include <iostream>
-#include <string>
 #include <fstream>
+#include <iomanip>
+#include <string>
+#include <stdio.h>
 using namespace std;
 
 struct household{
@@ -21,7 +29,6 @@ int main() {
     int i, j ,  lngth = 10, userChoice;
     bool tru;
     household households[lngth];
-    household sortedHouseHolds[lngth];
     
     inFile.open ("./dataFile.txt");
     if (inFile.fail()) {
@@ -102,7 +109,7 @@ void printAboveAverage(household households[], int lngth, int i) {
     cout << " _____\t______\t_______\n" << endl;
     for( i=0; i < lngth - 10; i++) {
         if(households[i].annualincome >= averageIncome)
-            cout<<households[i].idcode<<"\t"<< households[i].annualincome<<"\t" << households[i].members<<endl;
+            cout << i+1 << ':'<< households[i].idcode<<"\t"<< households[i].annualincome<<"\t" << households[i].members<<endl;
     }
 
 };
@@ -114,7 +121,7 @@ void printBelowPoverty(household households[], int lngth, int i) {
     for( i=0; i < lngth - 10; i++) {
         float P = 8000.00 + 500.00 * ( households[i]. members - 2);
         if(households[i].annualincome < P)
-            cout<<households[i].idcode<<"\t"<< households[i].annualincome<<"\t" << households[i].members<<endl;
+            cout <<i+1 << ':'<<households[i].idcode<<"\t"<< households[i].annualincome<<"\t" << households[i].members<<endl;
     }
 
 };
@@ -135,12 +142,13 @@ void printallsortedincome(household households[], int lngth, int i , int j) {
     cout << endl << " CODE\tINCOME\tMEMBERS" << endl;
     cout << " _____\t______\t_______\n" << endl;
     for( i = 0; i < lngth - 10; i++) {
-        cout<<households[i].idcode<<"\t"<< households[i].annualincome<<"\t" << households[i].members<<endl;
+        cout <<i+1 << ':'<<households[i].idcode<<"\t"<< households[i].annualincome<<"\t" << households[i].members<<endl;
     }
 
 };
 
 void printmedian(household households[], int lngth, int i, int j) {
+    float median;
     for( i = 0; i < lngth - 10; i++) {
         for(int j=i+1; j < lngth - 10; j++) {
             if(households[i].annualincome > households[j].annualincome) {
@@ -152,6 +160,13 @@ void printmedian(household households[], int lngth, int i, int j) {
 
         }
     }
-    float median = (households[7].annualincome + households[8].annualincome)/2;
+    if (lngth % 2 == 0) {
+        median = (households[(lngth / 2) - 1].annualincome + households[lngth / 2].annualincome)/2;
+    }
+    else {
+        int aprxLngth = lngth + 1;
+        median = (households[(aprxLngth / 2) - 1].annualincome + households[aprxLngth / 2].annualincome)/2;
+    }
+    
     cout<<"Median: " << median;
 }
