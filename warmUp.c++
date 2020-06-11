@@ -131,13 +131,56 @@ using namespace std;
 // }
 
 // /* Driver Function */
+const int Nelements= 8;
 int main()
 {
-    int Big = 4, Small = 0;
-    cout << Big -- << "  " << Small ++;
-            if (--Big == ++ Small)
-                        cout << Big << " Equal  " << Small << endl;
-            else  cout <<  Big << " Not Equal  " << Small << endl;
+     int List [Nelements];
+
+            int Value, Highest,Lowest=0, Middle, Pos = 0, J;
+
+            bool Found = false;
+
+            Value = 4;
+
+            cout << Value << endl;
+
+            for (J = 0; J < Nelements; J++)
+
+                    {    List [J] = (J *2);  }            
+
+            Highest = Nelements -1;
+
+            while (!Found && Highest >= Lowest)
+
+            {    Middle = (Lowest + Highest) /2;
+
+                 if (Value == List [Middle])
+
+                        {           Found = 1;
+
+                                    Pos = Middle;
+
+                        }
+
+                 else if (Value < List [Middle])
+
+                                    Highest = Middle - 1;
+
+                 else Lowest = Middle + 1;
+
+            }
+
+            if (Found)
+
+                 {  cout << "Value located at position " << Pos; }
+
+            else   {  cout << "Value not located";  }
+
+            cout << "\nList of values: ";
+
+            for (J = 0; J < Nelements; J++)
+
+              {  cout << List[J] << " ";  }
 }
 // int employee_id[25];
 //    float pay [25];
